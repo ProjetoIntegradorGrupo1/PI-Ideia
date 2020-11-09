@@ -10,19 +10,16 @@ import javax.validation.constraints.Size;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name = "tema")
-public class Tema {
+@Table(name = "empresa")
+public class Empresa {
 	
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@NotNull
-	@Size(min = 3, max = 100)
-	private String tipo;
-	
-	@Size(min = 0, max = 7)
-	private long postagens;
+	@Size(min = 1, max = 50)
+	private String nome;
 
 	public long getId() {
 		return id;
@@ -32,22 +29,15 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public long getPostagens() {
-		return postagens;
-	}
-
-	public void setPostagens(long postagens) {
-		this.postagens = postagens;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	
+
 
 }

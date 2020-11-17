@@ -29,11 +29,9 @@ public class Usuario {
 	@NotNull
 	private String email;
 
-	@Size(min = 6, max = 50)
 	@NotNull
 	private String senha;
-
-	@Size(max = 2)
+	
 	private int tipoDef;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -73,15 +71,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public int getTipoDef() {
-		return tipoDef;
-	}
-
-	public void setTipoDef(int tipoDef) {
-		this.tipoDef = tipoDef;
-	}
-
-	
 	 public List<Postagem> getPostagem() { 
 		 return postagem; 
 		 }

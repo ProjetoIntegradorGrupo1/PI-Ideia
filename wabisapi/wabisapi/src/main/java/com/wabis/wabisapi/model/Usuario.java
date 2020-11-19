@@ -32,7 +32,7 @@ public class Usuario {
 	@NotNull
 	private String senha;
 	
-	private int tipoDef;
+	//private int tipoDef;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	 @JsonIgnoreProperties("usuario") 

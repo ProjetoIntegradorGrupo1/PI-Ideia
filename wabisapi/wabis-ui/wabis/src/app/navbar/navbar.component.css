@@ -3,6 +3,31 @@
     font-size: 16pt;
 }
 
-.tm-logo {    width: 100px;
-    height: 100px;
+.tm-logo {    
+    width: 90px;
+    height: 90 px;
 }
+
+.corNav{
+    background-color: #54d2d2;
+}
+
+.textoNav{
+    color: #000000;
+}
+
+.textoNav:hover{
+  color: #fdb936;
+}
+
+.boxShadow {
+    border: 1px ;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+  }
+  .navbarTop {
+    position: fixed;
+    top: 0;
+    height: 90px;
+  }
+  

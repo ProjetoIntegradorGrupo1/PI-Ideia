@@ -6,3 +6,15 @@
 .tm-logo {    width: 100px;
     height: 100px;
 }
+
+.colorHome{
+    color:#000000;
+}
+
+.faHome{
+    color:#000000;
+}
+
+.faHome:hover{
+  color: #5474d2;
+}

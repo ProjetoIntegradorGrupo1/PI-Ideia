@@ -15,6 +15,10 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FeedComponent } from './feed/feed.component';
 import { PostEmpresaComponent } from './post-empresa/post-empresa.component';
+import { DeleteEmpresaComponent } from './delete-empresa/delete-empresa.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { PutEmpresaComponent } from './put-empresa/put-empresa.component';
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { PostEmpresaComponent } from './post-empresa/post-empresa.component';
     LoginComponent,
     CadastroComponent,
     FeedComponent,
-    PostEmpresaComponent
+    PostEmpresaComponent,
+    DeleteEmpresaComponent,
+    DeletePostagemComponent,
+    PutEmpresaComponent,
+    PutPostagemComponent
   ],
   imports: [
     BrowserModule,

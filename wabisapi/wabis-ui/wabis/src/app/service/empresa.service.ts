@@ -15,15 +15,23 @@ export class EmpresaService {
   }
 
   getAllEmpresa(): Observable<Empresa[]>{
-    return this.http.get<Empresa[]>('http://localhost:8080/empresa', this.token)
+    return this.http.get<Empresa[]>('http://localhost:9000/empresa', this.token)
   }
   
   getByIdEmpresa(id: number): Observable<Empresa>{
-    return this.http.get<Empresa>(`http://localhost:8080/empresa/${id}`, this.token)
+    return this.http.get<Empresa>(`http://localhost:9000/empresa/${id}`, this.token)
   }
 
   postEmpresa(empresa: Empresa): Observable<Empresa>{
-    return this.http.post<Empresa>('http://localhost:8080/empresa', empresa, this.token)
+    return this.http.post<Empresa>('http://localhost:9000/empresa', empresa, this.token)
+  }
+
+  putEmpresa(empresa: Empresa): Observable<Empresa> {
+    return this.http.put<Empresa>('http://localhost:9000/empresa', empresa, this.token)
+  }
+
+  deleteEmpresa(id: number){
+    return this.http.delete<Empresa>(`http://localhost:9000/empresa/${id}`, this.token)
   }
 
 }

@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Empresa } from '../model/Empresa';
 import { EmpresaService } from '../service/empresa.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-post-Empresa',
@@ -15,7 +16,8 @@ export class PostEmpresaComponent implements OnInit {
 
   constructor(
     private empresaService: EmpresaService,
-    private router: Router
+    private router: Router,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -36,12 +38,12 @@ export class PostEmpresaComponent implements OnInit {
 
  cadastrar(){
    if (this.empresa.nome == null) {
-    alert('Preencha o campo de nome da empresa corretamente')
+    this.alert.showAlertDanger('Preencha o campo de nome da empresa corretamente')
    } else {
     this.empresaService.postEmpresa(this.empresa).subscribe((resp: Empresa) => {
       this.empresa = resp
       this.router.navigate(['/feed'])
-      alert('Empresa cadastrada com sucesso!')
+      this.alert.showAlertSuccess('Empresa cadastrada com sucesso!')
     })
    }
  }

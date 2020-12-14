@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Empresa } from '../model/Empresa';
 import { EmpresaService } from '../service/empresa.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-delete-empresa',
@@ -13,7 +14,8 @@ export class DeleteEmpresaComponent implements OnInit {
   constructor(
     private empresaService: EmpresaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit(){
@@ -31,7 +33,7 @@ export class DeleteEmpresaComponent implements OnInit {
   btnSim(){
     this.empresaService.deleteEmpresa(this.empresa.id).subscribe(() => {
       this.router.navigate(['/cadastro-empresa'])
-      alert('empresa apagado com sucesso!!')
+      this.alert.showAlertSuccess('empresa apagado com sucesso!!')
     })
   }
 

@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { OrderModule } from 'ngx-order-pipe'
+import { OrderModule } from 'ngx-order-pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { DeleteEmpresaComponent } from './delete-empresa/delete-empresa.componen
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 import { PutEmpresaComponent } from './put-empresa/put-empresa.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { PutPostagemComponent } from './put-postagem/put-postagem.component';
     DeleteEmpresaComponent,
     DeletePostagemComponent,
     PutEmpresaComponent,
-    PutPostagemComponent
+    PutPostagemComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { PutPostagemComponent } from './put-postagem/put-postagem.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    OrderModule
+    OrderModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

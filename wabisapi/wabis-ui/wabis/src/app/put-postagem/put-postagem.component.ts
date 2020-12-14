@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Empresa } from '../model/Empresa';
-import { Postagem } from '../model/Postagem';
-import { EmpresaService } from '../service/empresa.service';
-import { PostagemService } from '../service/postagem.service';
+import { Empresa } from './../model/Empresa';
+
+import { EmpresaService } from './../service/empresa.service';
+import { PostagemService } from './../service/postagem.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertasService } from './../service/alertas.service';
+import { Postagem } from './../model/Postagem';
 
 @Component({
   selector: 'app-put-postagem',
@@ -12,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PutPostagemComponent implements OnInit {
 
-  postagem: Postagem = new Postagem()
+  postagem: Postagem= new Postagem()
   idPost: number
 
   empresa: Empresa = new Empresa()
@@ -23,7 +25,8 @@ export class PutPostagemComponent implements OnInit {
     private empresaService: EmpresaService,
     private postagemService: PostagemService,
     private router: Router,
-    private route: ActivatedRoute 
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -45,10 +48,10 @@ export class PutPostagemComponent implements OnInit {
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) =>{
       this.postagem = resp
       this.router.navigate(['/feed'])
-      alert('Postagem alterada com sucesso')
+      this.alert.showAlertSuccess('Postagem alterada com sucesso')
     }, err =>{
       if (err.status = '500'){
-        alert('Preencha todos os campos corretamente antes de enviar!')
+        this.alert.showAlertDanger('Preencha todos os campos corretamente antes de enviar!')
       }
     })
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Empresa } from '../model/Empresa';
 import { EmpresaService } from '../service/empresa.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-put-empresa',
@@ -13,7 +14,8 @@ export class PutEmpresaComponent implements OnInit {
   constructor(
     private empresaService: EmpresaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class PutEmpresaComponent implements OnInit {
     this.empresaService.putEmpresa(this.empresa).subscribe((resp: Empresa) => {
       this.empresa = resp
       this.router.navigate(['/cadastro-empresa'])
-      alert('Empresa atualizado com sucesso!')
+      this.alert.showAlertSuccess('Empresa atualizado com sucesso!')
     })
   }
 

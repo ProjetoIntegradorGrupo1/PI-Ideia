@@ -31,7 +31,11 @@ export class EmpresaService {
   }
 
   deleteEmpresa(id: number){
-    return this.http.delete<Empresa>(`http://localhost:9000/empresa/${id}`, this.token)
+    return this.http.delete(`http://localhost:9000/empresa/${id}`, this.token)
+  }
+
+  getByNomeEmpresa(nome: string): Observable<Empresa[]> {
+    return this.http.get<Empresa[]>(`http://localhost:9000/empresa/nome/${nome}`, this.token)
   }
 
 }

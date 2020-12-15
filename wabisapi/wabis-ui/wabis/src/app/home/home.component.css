@@ -1,5 +1,5 @@
 .parallax{
-    background-image: url('https://evidencebased.education/wp-content/uploads/sites/3/customer-relationship-manager-e1523087588352.jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnk9GW0FjJWmMiBMO3KBqXk7X5uYEIxdVc-Q&usqp=CAU');
 
     min-height: 300px;
     background-attachment: fixed;
@@ -7,3 +7,17 @@
     background-repeat: no-repeat;    
     background-size: cover; 
 }
+
+.bg-jumbo{
+    background-color: #C1E0DC;
+}
+
+.tm-icon {    width: 160px;
+    height: 160px;
+}
+
+.tm-icon-2 {    width: 120px;
+    height: 120px;
+}
+
+

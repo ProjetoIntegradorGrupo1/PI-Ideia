@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Empresa } from '../model/Empresa';
+import { environment } from './../../environments/environment.prod'
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class EmpresaService {
   constructor(private http:HttpClient) { }
 
   token = {
-    headers: new HttpHeaders().set('Authorization', localStorage.getItem('token')!)
+    headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
   getAllEmpresa(): Observable<Empresa[]>{

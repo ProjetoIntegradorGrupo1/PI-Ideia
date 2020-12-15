@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Empresa } from '../model/Empresa';
 import { Router } from '@angular/router';
 import { AlertasService } from '../service/alertas.service';
+import { environment } from './../../environments/environment.prod'
 
 @Component({
   selector: 'app-feed',
@@ -35,8 +36,9 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(){
 
-    let token = localStorage.getItem('token')
-    if(token == null){
+    let token = environment.token
+
+    if(token == ''){
       this.router.navigate(['/login'])
       this.alert.showAlertDanger('Faça login antes de entrar no feed')
     }

@@ -2,6 +2,7 @@ import { AuthService } from './../service/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { environment } from './../../environments/environment.prod'
 
 @Component({
   selector: 'app-navbar',
@@ -22,7 +23,7 @@ export class NavbarComponent implements OnInit {
 
   sair() {
     this.router.navigate(['/login'])
-    localStorage.clear()
+    environment.token = ''
   }
 
 }

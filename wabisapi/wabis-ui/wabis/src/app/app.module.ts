@@ -22,6 +22,8 @@ import { PutEmpresaComponent } from './put-empresa/put-empresa.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { AlertasComponent } from './alertas/alertas.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,10 @@ import { AlertasComponent } from './alertas/alertas.component';
     OrderModule,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

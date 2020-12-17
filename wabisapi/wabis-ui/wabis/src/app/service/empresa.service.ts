@@ -17,27 +17,27 @@ export class EmpresaService {
   }
 
   getAllEmpresa(): Observable<Empresa[]>{
-    return this.http.get<Empresa[]>('http://localhost:9000/empresa', this.token)
+    return this.http.get<Empresa[]>('https://wabis.herokuapp.com/empresa', this.token)
   }
   
   getByIdEmpresa(id: number): Observable<Empresa>{
-    return this.http.get<Empresa>(`http://localhost:9000/empresa/${id}`, this.token)
+    return this.http.get<Empresa>(`https://wabis.herokuapp.com/empresa/${id}`, this.token)
   }
 
   postEmpresa(empresa: Empresa): Observable<Empresa>{
-    return this.http.post<Empresa>('http://localhost:9000/empresa', empresa, this.token)
+    return this.http.post<Empresa>('https://wabis.herokuapp.com/empresa', empresa, this.token)
   }
 
   putEmpresa(empresa: Empresa): Observable<Empresa> {
-    return this.http.put<Empresa>('http://localhost:9000/empresa', empresa, this.token)
+    return this.http.put<Empresa>('https://wabis.herokuapp.com/empresa', empresa, this.token)
   }
 
   deleteEmpresa(id: number){
-    return this.http.delete(`http://localhost:9000/empresa/${id}`, this.token)
+    return this.http.delete(`https://wabis.herokuapp.com/empresa/${id}`, this.token)
   }
 
   getByNomeEmpresa(nome: string): Observable<Empresa[]> {
-    return this.http.get<Empresa[]>(`http://localhost:9000/empresa/nome/${nome}`, this.token)
+    return this.http.get<Empresa[]>(`https://wabis.herokuapp.com/empresa/nome/${nome}`, this.token)
   }
 
 }

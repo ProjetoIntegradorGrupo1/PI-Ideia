@@ -9,15 +9,20 @@
 }
 
 .bg-jumbo{
-    background-color: #C1E0DC;
+    background-color:#AFDFAF;
 }
 
-.tm-icon {    width: 160px;
-    height: 160px;
+.tm-img {    width: 250px;
+    height: 250px;
 }
 
-.tm-icon-2 {    width: 120px;
-    height: 120px;
+@font-face{
+    font-family: "Lemon Milk";
+    src: "\assets\fonts\LEMONMILK-Medium.otf";
+}
+
+.lm{
+    font-family:  "Lemon Milk";
 }
 
 

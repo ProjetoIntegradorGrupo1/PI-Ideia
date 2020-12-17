@@ -33,7 +33,7 @@ export class DeletePostagemComponent implements OnInit {
   }
 
   btnSim() {
-    this.postagemService.deletePostagem(this.postagem.id).subscribe(() => {
+      this.postagemService.deletePostagem(this.postagem.id).subscribe(() => {
       this.router.navigate(['/feed'])
       this.alert.showAlertSuccess('Postagem apagada com sucesso!')
     })
